@@ -1,0 +1,31 @@
+secretEnv:
+    DB_HOST: ENC[AES256_GCM,data:qldsrZAgU2WoK3Q=,iv:EdyOK40XSz9gfx4BVlVcWdnYpIQ7e9F0o6g62KXIpVc=,tag:d4NdXSfEDpYOi69r5WzVrw==,type:str]
+    DB_PASS: ENC[AES256_GCM,data:n+HBAuCfz3A=,iv:/uqeF7DiCDk0ydHBqftSSVO+8eJeqx+4jYkifJKG5JQ=,tag:EoTgNDb3jKq3ZbKnkCTZ2A==,type:str]
+env:
+    DB_PORT: "27017"
+ingress:
+    enabled: false
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    lastmodified: '2020-11-26T00:17:08Z'
+    mac: ENC[AES256_GCM,data:mljXtjvuINHYCaxtwURblUi8q7xOLktpSGuGSim2/Y3mUTWbB0wkyMtKilWqjs4Ic9uEJG1bDWi88EgICg6Mg/e+JBYSbJGWNSOMgp5tESBhWmdjw69Gog4GFtjErQTWz+QJEMMU7tDgmgfuqA+f9mgMTyXW8bFMd4K+i8pXiP0=,iv:fiBKRG5RgJsAjSc6vGZNhVmSOl3jT32bO9NK2TihKKo=,tag:4NsXEWdFz2S7Dt9ylfsk6g==,type:str]
+    pgp:
+    -   created_at: '2020-11-26T00:17:08Z'
+        enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hQEMAyUpShfNkFB/AQgAjBVbfk4YyvzpYXzQFsvOCHep3fOlyY73N4j2Llt+m+Mj
+            1Ec+ks8nAdoYiYo+WQ2umvzdFmaKf0WXosL6DI1OXY8X7fDBp5wH8D4b0EHLOJpZ
+            u0MublpTyqD6tLkyWFVQQiaD3SMnVJNvriJlmHUkv6MpoP02VoLKFQCDF6PbXgLJ
+            qQnlayeLMXfQf+SCwg3F1A1RJcj6RKh16MxIWiK16HF7o7k7KH+D53ded1zaRrxq
+            +gCwq3cDQNmnIJ0dOP2XN1Bja5QUJMwLoViddgFZ4Ps7gXyxliVp7jomZ4FZ42Wv
+            NySci+BTp3XKt5GfJG4WH78MV8KGxIq+VcfEiwPl0NJcAWMItjeY059DUa+adkoJ
+            U/ICmDmR5IRqUiEsXW80wbYc9y6tnELY0DxFp+K4OkddbJK5uAa7rC4YvGGbOEZ5
+            ecU5U1fV+QH2Fm2zceOvxIsa6uKdNcI2+mTPyIM=
+            =T/aM
+            -----END PGP MESSAGE-----
+        fp: FBC7B9E2A4F9289AC0C1D4843D16CEE4A27381B4
+    encrypted_suffix: secretEnv
+    version: 3.4.0

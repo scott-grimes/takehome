@@ -1,0 +1,55 @@
+version: '3'
+services:
+  server:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    # .env file must be set when deploying to aws
+    # via terraform
+    env_file:
+    - .env
+    # environment are set automatically when running
+    # in aws via terraform
+    environment:
+      - DEBUG=true
+      - DB_HOST=mongodb
+      - DB_USER=dev
+      - DB_PASS=ally0urbasearebelong2us
+      - DB_NAME=fakebook
+    depends_on:
+      - mongodb
+    volumes:
+    - ${PWD}:/srv
+  mongodb:
+    image: 'mongo:4.4.2-bionic'
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=dev
+      - MONGO_INITDB_ROOT_PASSWORD=ally0urbasearebelong2us
+      - MONGO_INITDB_DATABASE=fakebook
+    volumes:
+      - 'mongodb_fakebook:/data/db'
+      - ${PWD}/dev_mongo_init.js:/docker-entrypoint-initdb.d/dev_mongo_init.js
+    ports:
+      - '27017:27017'
+  test:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    entrypoint: sleep
+    command: "infinity"
+    env_file:
+    - .env
+    environment:
+      - DEBUG=true
+      - DB_HOST=mongodb
+      - DB_USER=dev
+      - DB_PASS=ally0urbasearebelong2us
+      - DB_NAME=fakebook
+    volumes:
+    - ${PWD}:/srv
+
+volumes:
+  mongodb_fakebook:
+    driver: local

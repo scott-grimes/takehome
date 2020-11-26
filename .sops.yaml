@@ -1,0 +1,5 @@
+creation_rules:
+  # github.com/mozilla/sops
+  # pgp/sops_functional_tests_key.asc
+  - path_regex: .*
+    pgp: FBC7B9E2A4F9289AC0C1D4843D16CEE4A27381B4
